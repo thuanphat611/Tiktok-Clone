@@ -1,1 +1,1 @@
-thực hành reactjs clone web tiktok
+Thực hành reactjs clone web tiktok
