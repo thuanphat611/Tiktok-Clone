@@ -4,10 +4,11 @@ import images from "~/assets/images";
 import Tippy from "@tippyjs/react/headless";
 import { Wrapper as PopperWrapper } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
+import Button from "~/components/Button";
 
 //icons
 import { BiSearch } from "react-icons/bi";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { AiOutlineLoading3Quarters, AiOutlinePlus } from "react-icons/ai";
 import { MdCancel } from "react-icons/md";
 
 import { useState, useEffect } from "react";
@@ -15,7 +16,7 @@ import { useState, useEffect } from "react";
 const cx = classNames.bind(styles);
 
 function Header() {
-  const [searchResults, setSearchResults] = useState([1]);
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
 
@@ -59,7 +60,10 @@ function Header() {
           </div>
         </Tippy>
 
-        <div className={cx("actions")}></div>
+        <div className={cx("actions")}>
+          <Button blackOutline leftIcon={<AiOutlinePlus />}>Tải lên</Button>
+          <Button primary>Đăng nhập</Button>
+        </div>
       </div>
     </header>
   );
