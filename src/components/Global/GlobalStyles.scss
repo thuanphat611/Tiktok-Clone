@@ -3,9 +3,16 @@
 
 :root {
   --primary: #fe2c55;
+
+  //default layout
+  --dl-header-height: 60px;
+  --dl-header-content-width: 1150px;
+  --dl-sidebar-width: 260px;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 

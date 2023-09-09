@@ -1,5 +1,5 @@
 //layouts
-import { HeaderOnly } from "~/component/Layout";
+import { HeaderOnly } from "~/components/Layout";
 
 //pages
 import Home from "../pages/Home";
