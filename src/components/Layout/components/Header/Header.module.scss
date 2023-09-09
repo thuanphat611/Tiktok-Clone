@@ -15,12 +15,7 @@
   justify-content: space-between;
 }
 
-.logo {
-
-}
-
 .search {
-  width: 500px;
   height: 46px;
   background-color: rgba(22, 24, 35, .06);
   border: 1px solid transparent;
@@ -71,6 +66,10 @@
   }
 }
 
+.search, .search-results {
+  width: 500px;
+}
+
 .clear,
 .loading {
   position: absolute;
@@ -95,4 +94,12 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+
+.search-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgba(22, 24, 35, 0.5);
+  padding: 5px 12px;
 }
