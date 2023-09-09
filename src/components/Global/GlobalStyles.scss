@@ -3,11 +3,14 @@
 
 :root {
   --primary: #fe2c55;
+  --black : #000;
 
   //default layout
   --dl-header-height: 60px;
-  --dl-header-content-width: 1150px;
+  --dl-header-content-width: 100%;
   --dl-sidebar-width: 260px;
+  --dl-search-height: 46px;
+  --dl-search-btn-width: 52px;
 }
 
 * {
@@ -23,6 +26,15 @@ html {
 body {
   font-family: 'IBM Plex Sans';
   font-size: 1.6rem;
-  line-height: 1.5rem;
   text-rendering: optimizeSpeed;
+}
+
+button, input {
+  border: none;
+  outline: none;
+}
+
+a[href] {
+  color: #333;
+  text-decoration: none;
 }
