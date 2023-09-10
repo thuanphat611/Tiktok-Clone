@@ -2,18 +2,44 @@ import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import images from "~/assets/images";
 import Tippy from "@tippyjs/react/headless";
-import { Wrapper as PopperWrapper } from "~/components/Popper";
+import { Wrapper as PopperWrapper, Menu } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
 
 //icons
-import { BiSearch } from "react-icons/bi";
-import { AiOutlineLoading3Quarters, AiOutlinePlus } from "react-icons/ai";
-import { MdCancel } from "react-icons/md";
+import { BiSearch, BiMoon } from "react-icons/bi";
+import { AiOutlineLoading3Quarters, AiOutlinePlus, AiOutlineQuestionCircle } from "react-icons/ai";
+import { MdCancel, MdDevices } from "react-icons/md";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { IoLanguageOutline, IoBulbOutline } from "react-icons/io5";
+import { CgKeyboard } from "react-icons/cg";
 
 import { useState, useEffect } from "react";
 
 const cx = classNames.bind(styles);
+const MENU_ITEMS = [
+  {
+    icon: <IoBulbOutline />,
+    title: 'Trung tâm Nhà sáng tạo LIVE'
+  },
+  {
+    icon: <IoLanguageOutline />,
+    title: 'Tiếng Việt'
+  },
+  {
+    icon: <AiOutlineQuestionCircle />,
+    title: 'Phản hồi và trợ giúp',
+    to : '/feedback'
+  },
+  {
+    icon: <CgKeyboard />,
+    title: 'Phím tắt trên bàn phím'
+  },
+  {
+    icon: <BiMoon  />,
+    title: 'Chế độ tối'
+  }
+]
 
 function Header() {
   const [searchResults, setSearchResults] = useState([]);
@@ -62,7 +88,17 @@ function Header() {
 
         <div className={cx("actions")}>
           <Button blackOutline leftIcon={<AiOutlinePlus />}>Tải lên</Button>
-          <Button primary>Đăng nhập</Button>
+          <Button primary to="/login">Đăng nhập</Button>
+          <button className={cx("devices-button")}>
+            <MdDevices />
+          </button>
+          <Menu
+            items={MENU_ITEMS}
+          >
+            <button className={cx("more-button")}>
+              <BsThreeDotsVertical />
+            </button>
+          </Menu>
         </div>
       </div>
     </header>
