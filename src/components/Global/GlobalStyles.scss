@@ -1,9 +1,9 @@
-@import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,300;1,400&display=swap");
 
 :root {
   --primary: #fe2c55;
-  --black : #000;
+  --black: #000;
   --white: #fff;
 
   //default layout
@@ -25,13 +25,14 @@ html {
 }
 
 body {
-  font-family: 'IBM Plex Sans';
+  font-family: "IBM Plex Sans";
   font-size: 1.6rem;
   text-rendering: optimizeSpeed;
 }
 
-button, input {
-  font-family: 'IBM Plex Sans';
+button,
+input {
+  font-family: "IBM Plex Sans";
   border: none;
   outline: none;
 }
@@ -39,4 +40,15 @@ button, input {
 a {
   color: #333;
   text-decoration: none;
+}
+
+//custom tippy tooltip
+body .tippy-box {
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  background-color: rgba(84, 84, 84, 0.92);
+  padding: 6px 0;
 }

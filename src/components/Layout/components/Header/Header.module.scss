@@ -115,10 +115,15 @@
   align-items: center;
 }
 
+.message-button,
+.mailbox-button,
 .devices-button,
 .more-button {
+  color: rgba(22, 24, 35, 1);
   background-color: transparent;
   margin-left: 16px;
+  cursor: pointer;
+  padding: 0 2px;
 }
 
 .devices-button {
@@ -127,8 +132,23 @@
   padding: 0 11px;
 }
 
+.message-button,
+.mailbox-button {
+  height: 26px;
+  font-size: 2.6rem;
+}
+
 .more-button{
   height: 20px;
   font-size: 2rem;
   padding: 0 4px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: 24px;
+  object-fit: cover;
+  cursor: pointer;
 }
