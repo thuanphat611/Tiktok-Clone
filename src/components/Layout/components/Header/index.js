@@ -24,7 +24,37 @@ const MENU_ITEMS = [
   },
   {
     icon: <IoLanguageOutline />,
-    title: 'Tiếng Việt'
+    title: 'Tiếng Việt',
+    children: {
+      title: 'Ngôn ngữ',
+      list: [
+        {
+          title: 'English',
+          code: 'en',
+          type: 'language'
+        },
+        {
+          title: 'Tiếng Việt',
+          code: 'vi',
+          type: 'language'
+        },
+        {
+          title: 'Deutsch',
+          code: 'de',
+          type: 'language'
+        },
+        {
+          title: 'Français',
+          code: 'fr',
+          type: 'language'
+        },
+        {
+          title: 'Italiano',
+          code: 'it',
+          type: 'language'
+        },
+      ]
+    }
   },
   {
     icon: <AiOutlineQuestionCircle />,
@@ -47,6 +77,10 @@ function Header() {
   useEffect(() => {
 
   },[])
+
+  const handleOnChange = ( item ) => {
+    console.log(item)
+  } 
 
   return (
     <header className={cx("wrapper")}>
@@ -94,6 +128,7 @@ function Header() {
           </button>
           <Menu
             items={MENU_ITEMS}
+            onChange={handleOnChange}
           >
             <button className={cx("more-button")}>
               <BsThreeDotsVertical />

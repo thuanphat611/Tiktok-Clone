@@ -15,6 +15,11 @@
   justify-content: space-between;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .search {
   height: 46px;
   background-color: rgba(22, 24, 35, .06);

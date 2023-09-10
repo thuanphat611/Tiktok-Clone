@@ -7,6 +7,7 @@
 
   .menu-item {
     line-height: 2.1rem;
+    font-weight: 500;
     border: none;
     padding: 10px 8px 10px 16px;
     border-radius: 0;
@@ -23,4 +24,28 @@
 
 .menu-popper {
   padding-bottom: 8px;
+}
+
+
+//header
+.header {
+  height: 50px;
+  display: flex;
+  position: relative;
+  margin-top: -8px;
+  cursor: pointer;
+}
+
+.back-button {
+  width: 50px;
+  height: 100%;
+  background-color: transparent !important;
+  cursor: pointer;
+}
+
+.header-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
