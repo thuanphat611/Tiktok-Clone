@@ -6,6 +6,7 @@ import HeadlessTippy from "@tippyjs/react/headless";
 import { SearchIcon, CancelIcon, LoadingIcon } from "~/components/Icons";
 import { useState, useRef, useEffect } from "react";
 import { useDebounce } from "~/components/hooks";
+import { searchService } from "~/api/search";
 
 const cx = classNames.bind(styles);
 
@@ -35,19 +36,15 @@ function Search() {
       return;
     }
 
-    setLoading(true);
-
-    fetch(
-      `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-          setSearchResults(res.data);
-          setLoading(false)
-      })
-      .catch(() =>{
-        setLoading(false);
-      })
+    const fetchApi = async () => {
+      setLoading(true);
+      const results = await searchService(searchValue, "less")
+      setSearchResults(results);
+      setLoading(false);
+    }
+    fetchApi();
+    
+  // eslint-disable-next-line
   }, [debounced]);
 
   return (
@@ -83,7 +80,9 @@ function Search() {
             <CancelIcon fill="rgba(22, 24, 35, .34)" />
           </button>
         )}
-        {loading && <LoadingIcon fill="rgba(22, 24, 35, .34)" className={cx("loading")} />}
+        {loading && (
+          <LoadingIcon fill="rgba(22, 24, 35, .34)" className={cx("loading")} />
+        )}
         <button className={cx("search-button")}>
           <SearchIcon />
         </button>
