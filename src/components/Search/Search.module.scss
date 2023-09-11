@@ -3,7 +3,7 @@
   background-color: rgba(22, 24, 35, .06);
   border: 1px solid transparent;
   border-radius: 92px;
-  padding-left: 16px;
+  padding: 2px 2px 2px 16px;
   display: flex;
   overflow: hidden;
   align-items: center;
@@ -67,7 +67,19 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding: 2px;
+}
+
+.loading {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: translateY(-50%) rotate(0);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
 }
 
 .search-button {

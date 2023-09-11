@@ -2,22 +2,22 @@ import classNames from "classnames/bind";
 import styles from "./AccountItem.module.scss";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import Image from "~/components/Image";
+import { Link } from "react-router-dom"
 
 const cx = classNames.bind(styles);
-const avatar = 'https://khoinguonsangtao.vn/wp-content/uploads/2022/07/avatar-tiktok-nam-chibi.jpg'
 
-function AccountItem() {
+function AccountItem({ data }) {
   return (  
-    <div className={cx("wrapper")}>
-      <Image className={cx("avatar")} src={avatar} alt="avatar" />
+    <Link to={`/${data.nickname}`} className={cx("wrapper")}>
+      <Image className={cx("avatar")} src={data.avatar} alt="avatar" />
       <div className={cx("info")}>
         <span className={cx("name")}>
-          <h4>Nguyen Van A</h4>
-          <BsFillCheckCircleFill className={cx("check")} />
+          <h4>{data.full_name}</h4>
+          {data.tick && <BsFillCheckCircleFill className={cx("check")} />}
         </span>
-        <span className={cx("username")}>@nguyenVanA</span>
+        <span className={cx("username")}>{data.nickname}</span>
       </div>
-    </div>
+    </Link>
   );  
 }
 
