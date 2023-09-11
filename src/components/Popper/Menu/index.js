@@ -12,6 +12,7 @@ const defaultFunction = () => {}
 function Menu({ children, items = [], onChange = defaultFunction}) {
   const [history, setHistory] = useState([{ list: items }]);
   const current = history[history.length - 1];
+
   const renderItems = () => {
     return current.list.map((item, index) => {
       const isParent = !!item.children;

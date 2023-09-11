@@ -1,41 +1,52 @@
+//library
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import images from "~/assets/images";
+
+//component
 import { Wrapper as PopperWrapper, Menu } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
+import Image from "~/components/Image";
 
 import HeadlessTippy from "@tippyjs/react/headless";
 import Tippy from "@tippyjs/react";
-import 'tippy.js/dist/tippy.css';
+import "tippy.js/dist/tippy.css";
 
 //icons
-import { BiSearch, BiMoon, BiMessageAltMinus } from "react-icons/bi";
 import {
-  AiOutlineLoading3Quarters,
-  AiOutlinePlus,
-  AiOutlineQuestionCircle,
-} from "react-icons/ai";
-import { MdCancel, MdDevices } from "react-icons/md";
-import { BsThreeDotsVertical, BsGearWide } from "react-icons/bs";
-import { IoLanguageOutline, IoBulbOutline } from "react-icons/io5";
-import { CgKeyboard } from "react-icons/cg";
-import { PiPaperPlaneTiltBold } from "react-icons/pi";
-import { RxPerson } from "react-icons/rx";
-import { FiBookmark, FiLogIn } from "react-icons/fi";
-import { TbCoin } from "react-icons/tb";
+  DeviceIcon,
+  MessageIcon,
+  MailboxIcon,
+  ProfileIcon,
+  BookmarkIcon,
+  CoinIcon,
+  BulbIcon,
+  GearIcon,
+  LanguageIcon,
+  HelpIcon,
+  KeyboardIcon,
+  MoonIcon,
+  LogOutIcon,
+  SearchIcon,
+  CancelIcon,
+  LoadingIcon,
+  PlusIcon,
+} from "~/components/Icons";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 import { useState, useEffect } from "react";
 
-const avatar = "https://haycafe.vn/wp-content/uploads/2021/11/Anh-avatar-dep-chat-lam-hinh-dai-dien.jpg"
+const avatar =
+  "https://haycafe.vn/wp-content/uploads/2021/11/Ah-avatar-dep-chat-lam-hinh-dai-dien.jpg";
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
-    icon: <IoBulbOutline />,
+    icon: <BulbIcon />,
     title: "Trung tâm Nhà sáng tạo LIVE",
   },
   {
-    icon: <IoLanguageOutline />,
+    icon: <LanguageIcon />,
     title: "Tiếng Việt",
     children: {
       title: "Ngôn ngữ",
@@ -69,16 +80,16 @@ const MENU_ITEMS = [
     },
   },
   {
-    icon: <AiOutlineQuestionCircle />,
+    icon: <HelpIcon />,
     title: "Phản hồi và trợ giúp",
     to: "/feedback",
   },
   {
-    icon: <CgKeyboard />,
+    icon: <KeyboardIcon />,
     title: "Phím tắt trên bàn phím",
   },
   {
-    icon: <BiMoon />,
+    icon: <MoonIcon />,
     title: "Chế độ tối",
   },
 ];
@@ -95,34 +106,34 @@ function Header() {
   const currentUser = true;
   const userMenu = [
     {
-      icon: <RxPerson />,
-      title: "Xem hồ sơ"
+      icon: <ProfileIcon />,
+      title: "Xem hồ sơ",
     },
     {
-      icon: <FiBookmark />,
-      title: "Yêu thích"
+      icon: <BookmarkIcon />,
+      title: "Yêu thích",
     },
     {
-      icon: <TbCoin />,
-      title: "Nhận xu"
+      icon: <CoinIcon />,
+      title: "Nhận xu",
     },
     {
-      icon: <BsGearWide />,
-      title: "Cài đặt"
+      icon: <GearIcon />,
+      title: "Cài đặt",
     },
     ...MENU_ITEMS,
     {
-      icon: <FiLogIn />,
+      icon: <LogOutIcon />,
       title: "Đăng xuất",
-      separate: true
+      separate: true,
     },
-  ]
+  ];
 
   return (
     <header className={cx("wrapper")}>
       <div className={cx("content")}>
         <div className={cx("logo")}>
-          <img src={images.logo} alt="Tiktok" />
+          <Image src={images.logo} alt="Tiktok" />
         </div>
 
         <HeadlessTippy
@@ -145,35 +156,34 @@ function Header() {
           <div className={cx("search")}>
             <input type="text" placeholder="Tìm kiếm" spellCheck={false} />
             <button className={cx("clear")}>
-              <MdCancel />
+              <CancelIcon fill="rgba(22, 24, 35, .34)" />
             </button>
-            <AiOutlineLoading3Quarters className={cx("loading")} />
+            <LoadingIcon fill="rgba(22, 24, 35, .34)" className={cx("loading")} />
             <button className={cx("search-button")}>
-              <BiSearch />
+              <SearchIcon fill="rgba(22, 24, 35, .75)" />
             </button>
           </div>
         </HeadlessTippy>
 
         <div className={cx("actions")}>
-          <Button blackOutline leftIcon={<AiOutlinePlus />}>
+          <Button blackOutline leftIcon={<PlusIcon />}>
             Tải lên
           </Button>
           {currentUser ? (
             <>
               <button className={cx("devices-button")}>
-                <MdDevices />
+                <DeviceIcon />
               </button>
               <Tippy delay={[0, 200]} placement="bottom" content="Tin nhắn">
                 <button className={cx("message-button")}>
-                  <PiPaperPlaneTiltBold />
+                  <MessageIcon />
                 </button>
               </Tippy>
               <Tippy delay={[0, 200]} placement="bottom" content="Hộp thư">
                 <button className={cx("mailbox-button")}>
-                  <BiMessageAltMinus />
+                  <MailboxIcon />
                 </button>
               </Tippy>
-              <div className={cx("current-user")}></div>
             </>
           ) : (
             <>
@@ -181,13 +191,16 @@ function Header() {
                 Đăng nhập
               </Button>
               <button className={cx("devices-button")}>
-                <MdDevices />
+                <DeviceIcon />
               </button>
             </>
           )}
-          <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleOnChange}>
+          <Menu
+            items={currentUser ? userMenu : MENU_ITEMS}
+            onChange={handleOnChange}
+          >
             {currentUser ? (
-              <img className={cx("user-avatar")} src={avatar} alt="avatar" />
+              <Image className={cx("user-avatar")} src={avatar} alt="avatar" />
             ) : (
               <button className={cx("more-button")}>
                 <BsThreeDotsVertical />
