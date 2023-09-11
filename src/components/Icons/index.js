@@ -4,7 +4,7 @@ export const DeviceIcon = ({
   width = "1em",
   height = "1em",
   fontSize = "26",
-  fill = "cu",
+  fill = "currentColor",
   className,
 }) => {
   return (
@@ -26,7 +26,7 @@ export const DeviceIcon = ({
 export const MessageIcon = ({
   width = "1em",
   height = "1em",
-  fill = "cu",
+  fill = "currentColor",
   className,
 }) => {
   return (
@@ -51,7 +51,7 @@ export const MessageIcon = ({
 export const MailboxIcon = ({
   width = "32",
   height = "32",
-  fill = "cu",
+  fill = "currentColor",
   className,
 }) => {
   return (
@@ -76,7 +76,7 @@ export const MailboxIcon = ({
 export const ProfileIcon = ({
   width = "20",
   height = "20",
-  fill = "cu",
+  fill = "currentColor",
   className,
 }) => {
   return (
@@ -101,7 +101,7 @@ export const ProfileIcon = ({
 export const BookmarkIcon = ({
   width = "20",
   height = "20",
-  fill = "cu",
+  fill = "currentColor",
   className,
 }) => {
   return (
@@ -123,7 +123,7 @@ export const BookmarkIcon = ({
   );
 };
 
-export const CoinIcon = ({ width = "20", height = "20", fill = "cu", className }) => {
+export const CoinIcon = ({ width = "20", height = "20", fill = "currentColor", className }) => {
   return (
     <svg
       className={className}
@@ -148,7 +148,7 @@ export const CoinIcon = ({ width = "20", height = "20", fill = "cu", className }
   );
 };
 
-export const BulbIcon = ({ width = "20", height = "20", fill = "cu", className }) => {
+export const BulbIcon = ({ width = "20", height = "20", fill = "currentColor", className }) => {
   return (
     <svg
       className={className}
@@ -174,7 +174,7 @@ export const BulbIcon = ({ width = "20", height = "20", fill = "cu", className }
   );
 };
 
-export const GearIcon = ({ width = "20", height = "20", fill = "cu", className }) => {
+export const GearIcon = ({ width = "20", height = "20", fill = "currentColor", className }) => {
   return (
     <svg
       className={className}
@@ -197,7 +197,7 @@ export const GearIcon = ({ width = "20", height = "20", fill = "cu", className }
 export const LanguageIcon = ({
   width = "20",
   height = "20",
-  fill = "cu",
+  fill = "currentColor",
   className,
 }) => {
   return (
@@ -219,7 +219,7 @@ export const LanguageIcon = ({
   );
 };
 
-export const HelpIcon = ({ width = "20", height = "20", fill = "cu", className }) => {
+export const HelpIcon = ({ width = "20", height = "20", fill = "currentColor", className }) => {
   return (
     <svg
       className={className}
@@ -242,7 +242,7 @@ export const HelpIcon = ({ width = "20", height = "20", fill = "cu", className }
 export const KeyboardIcon = ({
   width = "20",
   height = "20",
-  fill = "cu",
+  fill = "currentColor",
   className,
 }) => {
   return (
@@ -264,7 +264,7 @@ export const KeyboardIcon = ({
   );
 };
 
-export const MoonIcon = ({ width = "20", height = "20", fill = "cu", className }) => {
+export const MoonIcon = ({ width = "20", height = "20", fill = "currentColor", className }) => {
   return (
     <svg
       className={className}
@@ -287,7 +287,7 @@ export const MoonIcon = ({ width = "20", height = "20", fill = "cu", className }
 export const LogOutIcon = ({
   width = "20",
   height = "20",
-  fill = "cu",
+  fill = "currentColor",
   className,
 }) => {
   return (
@@ -312,7 +312,7 @@ export const LogOutIcon = ({
 export const SearchIcon = ({
   width = "24",
   height = "24",
-  fill = "cu",
+  fill = "currentColor",
   className,
 }) => {
   return (
@@ -337,7 +337,7 @@ export const SearchIcon = ({
 export const CancelIcon = ({
   width = "16",
   height = "16",
-  fill = "cu",
+  fill = "currentColor",
   style,
   className,
 }) => {
@@ -364,7 +364,7 @@ export const CancelIcon = ({
 export const LoadingIcon = ({
   width = "16",
   height = "16",
-  fill = "cu",
+  fill = "currentColor",
   style,
   className,
 }) => {

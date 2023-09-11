@@ -2,14 +2,13 @@
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import images from "~/assets/images";
+import Search from "~/components/Search";
 
 //component
-import { Wrapper as PopperWrapper, Menu } from "~/components/Popper";
-import AccountItem from "~/components/AccountItem";
+import { Menu } from "~/components/Popper";
 import Button from "~/components/Button";
 import Image from "~/components/Image";
 
-import HeadlessTippy from "@tippyjs/react/headless";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 
@@ -28,17 +27,14 @@ import {
   KeyboardIcon,
   MoonIcon,
   LogOutIcon,
-  SearchIcon,
-  CancelIcon,
-  LoadingIcon,
   PlusIcon,
 } from "~/components/Icons";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const avatar =
-  "https://haycafe.vn/wp-content/uploads/2021/11/Ah-avatar-dep-chat-lam-hinh-dai-dien.jpg";
+  "https://haycafe.vn/wp-content/uploads/2021/11/Anh-avatar-dep-chat-lam-hinh-dai-dien.jpg";
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
@@ -95,8 +91,6 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-  const [searchResults, setSearchResults] = useState([]);
-
   useEffect(() => {}, []);
 
   const handleOnChange = (item) => {
@@ -136,34 +130,9 @@ function Header() {
           <Image src={images.logo} alt="Tiktok" />
         </div>
 
-        <HeadlessTippy
-          interactive
-          visible={searchResults.length > 0}
-          render={(attrs) => (
-            <div className={cx("search-results")} tabIndex="-1" {...attrs}>
-              <PopperWrapper>
-                <h4 className={cx("search-title")}>Tài khoản</h4>
-
-                <AccountItem />
-                <AccountItem />
-                <AccountItem />
-                <AccountItem />
-                <AccountItem />
-              </PopperWrapper>
-            </div>
-          )}
-        >
-          <div className={cx("search")}>
-            <input type="text" placeholder="Tìm kiếm" spellCheck={false} />
-            <button className={cx("clear")}>
-              <CancelIcon fill="rgba(22, 24, 35, .34)" />
-            </button>
-            <LoadingIcon fill="rgba(22, 24, 35, .34)" className={cx("loading")} />
-            <button className={cx("search-button")}>
-              <SearchIcon fill="rgba(22, 24, 35, .75)" />
-            </button>
-          </div>
-        </HeadlessTippy>
+        <span>
+          <Search />
+        </span>
 
         <div className={cx("actions")}>
           <Button blackOutline leftIcon={<PlusIcon />}>

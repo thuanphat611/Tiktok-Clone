@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 import styles from "./AccountItem.module.scss";
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import Image from "~/components/Image";
 
 const cx = classNames.bind(styles);
 const avatar = 'https://khoinguonsangtao.vn/wp-content/uploads/2022/07/avatar-tiktok-nam-chibi.jpg'
@@ -8,7 +9,7 @@ const avatar = 'https://khoinguonsangtao.vn/wp-content/uploads/2022/07/avatar-ti
 function AccountItem() {
   return (  
     <div className={cx("wrapper")}>
-      <img className={cx("avatar")} src={avatar} alt="avatar" />
+      <Image className={cx("avatar")} src={avatar} alt="avatar" />
       <div className={cx("info")}>
         <span className={cx("name")}>
           <h4>Nguyen Van A</h4>
