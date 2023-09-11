@@ -29,6 +29,13 @@ function Search() {
   function handleHideResults() {
     setShowResults(false);
   }
+  
+  function handleChange(e) {
+    const searchValue = e.target.value;
+    if (!searchValue.startsWith(' ')) {
+      setSearchValue(searchValue);
+    }
+  }
 
   useEffect(() => {
     if (!debounced.trim()) {
@@ -70,7 +77,7 @@ function Search() {
           type="text"
           placeholder="Tìm kiếm"
           spellCheck={false}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={e =>handleChange(e)}
           onFocus={() => {
             setShowResults(true);
           }}
@@ -83,7 +90,7 @@ function Search() {
         {loading && (
           <LoadingIcon fill="rgba(22, 24, 35, .34)" className={cx("loading")} />
         )}
-        <button className={cx("search-button")}>
+        <button className={cx("search-button")} onMouseDown={(e) => e.preventDefault()}>
           <SearchIcon />
         </button>
       </div>

@@ -1,13 +1,16 @@
 //library
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
-import images from "~/assets/images";
-import Search from "~/components/Search";
+import { Link } from "react-router-dom"
 
 //component
+import images from "~/assets/images";
+import Search from "~/components/Search";
 import { Menu } from "~/components/Popper";
 import Button from "~/components/Button";
 import Image from "~/components/Image";
+import { useEffect } from "react";
+import routes from "~/config/route";
 
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
@@ -31,7 +34,6 @@ import {
 } from "~/components/Icons";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-import { useEffect } from "react";
 
 const avatar =
   "https://haycafe.vn/wp-content/uploads/2021/11/Anh-avatar-dep-chat-lam-hinh-dai-dien.jpg";
@@ -93,9 +95,9 @@ const MENU_ITEMS = [
 function Header() {
   useEffect(() => {}, []);
 
-  const handleOnChange = (item) => {
-    console.log(item);
-  };
+  // const handleOnChange = (item) => {
+  //   console.log(item);
+  // };
 
   const currentUser = true;
   const userMenu = [
@@ -126,9 +128,9 @@ function Header() {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("content")}>
-        <div className={cx("logo")}>
+        <Link to={routes.root} className={cx("logo")}>
           <Image src={images.logo} alt="Tiktok" />
-        </div>
+        </Link>
 
         <span>
           <Search />
@@ -156,7 +158,7 @@ function Header() {
             </>
           ) : (
             <>
-              <Button primary to="/login">
+              <Button primary to={routes.login}>
                 Đăng nhập
               </Button>
               <button className={cx("devices-button")}>
@@ -166,7 +168,7 @@ function Header() {
           )}
           <Menu
             items={currentUser ? userMenu : MENU_ITEMS}
-            onChange={handleOnChange}
+            // onChange={handleOnChange}
           >
             {currentUser ? (
               <Image className={cx("user-avatar")} src={avatar} alt="avatar" />

@@ -7,9 +7,14 @@ import Header from "~/components/Popper/Menu/Header";
 import { useState } from "react";
 
 const cx = classNames.bind(styles);
-const defaultFunction = () => {}
+const defaultFunction = () => {};
 
-function Menu({ children, items = [], onChange = defaultFunction}) {
+function Menu({
+  children,
+  hideOnClick = "false",
+  items = [],
+  onChange = defaultFunction,
+}) {
   const [history, setHistory] = useState([{ list: items }]);
   const current = history[history.length - 1];
 
@@ -24,9 +29,8 @@ function Menu({ children, items = [], onChange = defaultFunction}) {
           onclick={() => {
             if (isParent) {
               setHistory((prev) => [...prev, item.children]);
-            }
-            else {
-              onChange(item)
+            } else {
+              onChange(item);
             }
           }}
         />
@@ -38,6 +42,7 @@ function Menu({ children, items = [], onChange = defaultFunction}) {
     <Tippy
       offset={[10, 10]}
       delay={[0, 700]}
+      hideOnClick={hideOnClick}
       interactive
       placement="bottom-end"
       render={(attrs) => (
@@ -51,12 +56,13 @@ function Menu({ children, items = [], onChange = defaultFunction}) {
                 }}
               />
             )}
-            {renderItems()}
+            <div className={cx("menu-body")}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}
-
-      onHide={() => { setHistory((prev) => prev.slice(0, 1))}}
+      onHide={() => {
+        setHistory((prev) => prev.slice(0, 1));
+      }}
     >
       {children}
     </Tippy>

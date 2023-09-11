@@ -30,8 +30,11 @@
   padding-bottom: 8px;
 }
 
+.menu-body {
+  overflow-y: auto;
+}
 
-//header
+//menu header
 .header {
   height: 50px;
   display: flex;
