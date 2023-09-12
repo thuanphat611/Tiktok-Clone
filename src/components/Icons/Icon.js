@@ -443,7 +443,7 @@ export const RightArrowIcon = ({
   width = "14",
   height = "14",
   fontSize,
-  className
+  className,
 }) => {
   return (
     <svg
@@ -456,6 +456,33 @@ export const RightArrowIcon = ({
       xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M28.74 24 15.08 10.33a1 1 0 0 1 0-1.41l1.84-1.84a1 1 0 0 1 1.41 0L34.54 23.3a1 1 0 0 1 0 1.42l-16.2 16.21a1 1 0 0 1-1.42 0l-1.84-1.84a1 1 0 0 1 0-1.41L28.74 24Z"></path>
+    </svg>
+  );
+};
+
+export const CloseIcon = ({
+  fill = "currentColor",
+  width = "24",
+  height = "24",
+  className,
+  onClick
+}) => {
+  return (
+    <svg
+      onClick={onClick}
+      className={className}
+      fill={fill}
+      width={width}
+      height={height}
+      datae2e=""
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M21.1718 23.9999L10.2931 13.1212C9.90261 12.7307 9.90261 12.0975 10.2931 11.707L11.7074 10.2928C12.0979 9.90228 12.731 9.90228 13.1216 10.2928L24.0002 21.1715L34.8789 10.2928C35.2694 9.90228 35.9026 9.90228 36.2931 10.2928L37.7073 11.707C38.0979 12.0975 38.0979 12.7307 37.7073 13.1212L26.8287 23.9999L37.7073 34.8786C38.0979 35.2691 38.0979 35.9023 37.7073 36.2928L36.2931 37.707C35.9026 38.0975 35.2694 38.0975 34.8789 37.707L24.0002 26.8283L13.1216 37.707C12.731 38.0975 12.0979 38.0975 11.7074 37.707L10.2931 36.2928C9.90261 35.9023 9.90261 35.2691 10.2931 34.8786L21.1718 23.9999Z"
+      ></path>
     </svg>
   );
 };

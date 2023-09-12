@@ -10,7 +10,7 @@ import { RightArrowIcon } from "~/components/Icons";
 
 const cx = classNames.bind(styles);
 
-function DownloadApp({ children, hideOnClick = "false" }) {
+function DownloadApp({ children, hideOnClick = "false", showModal}) {
   return (
     <Tippy
       offset={[-48, 25]}
@@ -31,7 +31,7 @@ function DownloadApp({ children, hideOnClick = "false" }) {
             <Button to="/download" className={cx("button")} primary large>
               Tải về
             </Button>
-            <div className={cx("mobile-app")}>
+            <div className={cx("mobile-app")} onClick={showModal}>
               <h4>Thay vào đó, tải ứng dụng di động về</h4>
               <RightArrowIcon className={cx("mobile-icon")} />
             </div>
@@ -47,6 +47,7 @@ function DownloadApp({ children, hideOnClick = "false" }) {
 DownloadApp.propTypes = {
   children: PropTypes.node.isRequired,
   hideOnClick: PropTypes.bool,
+  showModal: PropTypes.func,
 };
 
 export default DownloadApp;

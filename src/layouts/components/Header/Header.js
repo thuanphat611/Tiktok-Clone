@@ -1,7 +1,7 @@
 //library
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 //component
 import images from "~/assets/images";
@@ -12,6 +12,10 @@ import Image from "~/components/Image";
 import { useEffect } from "react";
 import routes from "~/config/route";
 import DownloadApp from "~/components/Popper/DownloadApp";
+import DownloadModal from "~/components/Popper/DownloadModal";
+
+import Modal from "~/components/Modal";
+import { useToggle } from "~/components/hooks";
 
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
@@ -125,6 +129,8 @@ function Header() {
     },
   ];
 
+  const [showModal, toggleModal] = useToggle(false);
+
   return (
     <header className={cx("wrapper")}>
       <div className={cx("content")}>
@@ -143,7 +149,7 @@ function Header() {
           {currentUser ? (
             <>
               <span>
-                <DownloadApp>
+                <DownloadApp showModal={toggleModal}>
                   <button className={cx("devices-button")}>
                     <DeviceIcon />
                   </button>
@@ -184,6 +190,10 @@ function Header() {
           </Menu>
         </div>
       </div>
+
+      <Modal center trigger={showModal}>
+        <DownloadModal toggleModal={toggleModal} />
+      </Modal>
     </header>
   );
 }
