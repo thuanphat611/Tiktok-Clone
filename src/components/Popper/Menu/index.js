@@ -5,6 +5,7 @@ import { Wrapper as PopperWrapper } from "~/components/Popper";
 import MenuItem from "./MenuItem";
 import Header from "~/components/Popper/Menu/Header";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const cx = classNames.bind(styles);
 const defaultFunction = () => {};
@@ -68,5 +69,12 @@ function Menu({
     </Tippy>
   );
 }
+
+Menu.propTypes = {
+  children: PropTypes.node.isRequired,
+  items: PropTypes.array,
+  hideOnClick: PropTypes.bool,
+  onChange: PropTypes.func,
+};
 
 export default Menu;

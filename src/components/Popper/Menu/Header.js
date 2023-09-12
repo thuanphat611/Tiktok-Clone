@@ -1,6 +1,8 @@
 import classNames from "classnames/bind";
 import styles from "./Menu.module.scss";
 import { MdOutlineArrowBackIos } from "react-icons/md"
+import PropTypes from "prop-types";
+
 const cx = classNames.bind(styles);
 
 function Header({ title, onBack }) {
@@ -12,6 +14,11 @@ function Header({ title, onBack }) {
       <h4 className={cx("header-title")}>{title}</h4>
     </header>
   )
+}
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+  onBack: PropTypes.func,
 }
 
 export default Header;

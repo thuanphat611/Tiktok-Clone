@@ -1,10 +1,11 @@
 import classNames from "classnames/bind";
 import styles from "./Button.module.scss";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
-function AccountItem({
+function Button({
   className,
   to,
   href,
@@ -64,4 +65,21 @@ function AccountItem({
   );
 }
 
-export default AccountItem;
+Button.propTypes = {
+  className: PropTypes.string,
+  to: PropTypes.string,
+  href: PropTypes.string,
+  disabled: PropTypes.string,
+  primary: PropTypes.bool,
+  outline: PropTypes.bool,
+  blackOutline: PropTypes.bool,
+  round: PropTypes.bool,
+  small: PropTypes.bool,
+  large: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+  leftIcon: PropTypes.node,
+  rightIcon: PropTypes.node,
+  onClick: PropTypes.func,
+}
+
+export default Button;
