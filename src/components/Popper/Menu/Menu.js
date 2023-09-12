@@ -48,7 +48,7 @@ function Menu({
       placement="bottom-end"
       render={(attrs) => (
         <div className={cx("menu-list")} tabIndex="-1" {...attrs}>
-          <PopperWrapper className={cx("menu-popper")}>
+          <PopperWrapper>
             {history.length > 1 && (
               <Header
                 title={current.title}
@@ -61,7 +61,7 @@ function Menu({
           </PopperWrapper>
         </div>
       )}
-      onHide={() => {
+      onHide={() => { //đưa về menu đầu tiên khi tippy bị ẩn đi
         setHistory((prev) => prev.slice(0, 1));
       }}
     >

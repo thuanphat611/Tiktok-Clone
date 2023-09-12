@@ -11,6 +11,7 @@ import Button from "~/components/Button";
 import Image from "~/components/Image";
 import { useEffect } from "react";
 import routes from "~/config/route";
+import DownloadApp from "~/components/Popper/DownloadApp";
 
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
@@ -33,7 +34,6 @@ import {
   PlusIcon,
 } from "~/components/Icons";
 import { BsThreeDotsVertical } from "react-icons/bs";
-
 
 const avatar =
   "https://haycafe.vn/wp-content/uploads/2021/11/Anh-avatar-dep-chat-lam-hinh-dai-dien.jpg";
@@ -142,9 +142,13 @@ function Header() {
           </Button>
           {currentUser ? (
             <>
-              <button className={cx("devices-button")}>
-                <DeviceIcon />
-              </button>
+              <span>
+                <DownloadApp>
+                  <button className={cx("devices-button")}>
+                    <DeviceIcon />
+                  </button>
+                </DownloadApp>
+              </span>
               <Tippy delay={[0, 200]} placement="bottom" content="Tin nhắn">
                 <button className={cx("message-button")}>
                   <MessageIcon />

@@ -1,0 +1,64 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 20px 8px;
+  align-items: center;
+  max-width: 230px;
+  cursor: default;
+  position: relative;
+}
+
+.arrow {
+  height: 0;
+  width: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 18px solid var(--white);
+  position: absolute;
+  top: -18px;
+  right: 52px;
+}
+
+.image {
+  width: 116px;
+  height: 100px;
+}
+
+.title {
+  color: var(--text-color);
+  font-weight: 700;
+  letter-spacing: 0.093px;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.button {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.093px;
+  border-radius: 2px;
+}
+
+.mobile-app {
+  color: rgba(22, 24, 35, 0.5);
+  letter-spacing: 0.093px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  margin-top: 12px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-icon {
+  margin-inline-start: 4px;
+}
