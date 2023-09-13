@@ -10,8 +10,6 @@ function Modal({ children, trigger, center = false}) {
     center
   })
   
-  console.log("re-render");
-
   return (
     <>
       {trigger ?
