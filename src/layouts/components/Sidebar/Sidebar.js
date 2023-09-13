@@ -3,6 +3,7 @@ import styles from "./Sidebar.module.scss";
 import config from "~/config";
 import Menu, { MenuItem } from "./Menu"
 import { HomeIconOutline, HomeIconSolid, PeopleIconOutline, PeopleIconSolid, CompassIconOutline, CompassIconSolid, LiveIconOutline, LiveIconSolid } from "~/components/Icons";
+import SuggestedAccounts from "~/components/SuggestedAccounts";
 
 const cx = classNames.bind(styles);
 
@@ -15,6 +16,8 @@ function Sidebar() {
         <MenuItem title="Khám phá" to={config.routes.explore} icon={<CompassIconOutline />} activeIcon={<CompassIconSolid />} ></MenuItem>
         <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIconOutline />} activeIcon={<LiveIconSolid />} ></MenuItem>
       </Menu>
+
+      <SuggestedAccounts label="Các tài khoản đang follow" />
     </aside>
   );
 }

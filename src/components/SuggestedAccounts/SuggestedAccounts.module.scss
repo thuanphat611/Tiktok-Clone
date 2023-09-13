@@ -1,0 +1,108 @@
+.wrapper {
+  padding: 16px 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 0;
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
+    -webkit-transform: scaleY(0.5);
+    -moz-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+}
+
+.label {
+  color: rgba(22, 24, 35, 0.75);
+  padding: 0 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.093px;
+}
+
+.account-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 200ms ease-in-out 0s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+.username-wrapper {
+  display: flex;
+  height: 21px;
+  position: relative;
+}
+
+.username {
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  letter-spacing: 0.03px;
+  max-width: 145px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.check {
+  width: 14px;
+  height: 14px;
+  color: #20d5ec;
+  margin-left: 4px;
+}
+
+.nickname {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0.161px;
+  line-height: 1.5rem;
+  max-width: 145px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.more-btn {
+  width: fit-content;
+  color: #fe2c55;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.093px;
+  background: transparent;
+  border: none;
+  padding: 0px 8px;
+  margin-top: 8px;
+  cursor: pointer;
+}

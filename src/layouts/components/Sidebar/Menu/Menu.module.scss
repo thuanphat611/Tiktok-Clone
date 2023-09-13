@@ -14,6 +14,10 @@
   &.active {
     color: var(--primary);
   }
+
+  &:last-child {
+    margin-bottom: 8px;
+  }
 }
 
 .title {
