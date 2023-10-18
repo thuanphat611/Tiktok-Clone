@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 import styles from "./SuggestedAccounts.module.scss";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import Image from "../Image";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
@@ -24,6 +24,6 @@ function AccountItem() {
   );
 }
 
-AccountItem.propTypes = {};
+// AccountItem.propTypes = {};
 
 export default AccountItem;
